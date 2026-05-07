@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature-Converter</title>
+</head>
+<body>
+    Enter the temperature
+        <input type="text" id="temp"><br><br>
+        Enter the choice f or k
+        <input type="text" id="opt"><br><br>
+        <button id="ree" onClick="conv()">Result</button><br><br><hr>
+        Converted Temparature is
+        <p id="res1"></p>
+        <p id="res2"></p><hr>
+
+
+    <script>
+        function conv(){
+        var temp=parseInt(document.getElementById('temp').value);
+        var opt=document.getElementById('opt').value;
+        switch(opt){
+            case "K":
+            case "k":{
+                        var kel=temp+273;
+                        document.getElementById("res1").innerHTML=kel;
+                        break;
+                    }
+            case "F":
+            case "f":
+                {
+                        var fah=((temp*9)/5)+32;
+                        document.getElementById("res2").innerHTML=fah;
+                        document.getElementById("res1").innerHTML="";
+                        break;
+                     }
+                        default:
+                            alert("Invalid Choice");
+                    }
+                }
+        </script>
+
+</body>
+</html>
